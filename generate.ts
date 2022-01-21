@@ -30,6 +30,7 @@ mods.addRule({
 	],
 });
 
+// Vim Key Bindings
 mods.addRule({
 	description: "Vim Key Bindings",
 	manipulators: [
@@ -59,8 +60,10 @@ vimTuples.forEach(([keyFrom, keyTo]) => {
 	});
 });
 
+
+// Symbols
 mods.addRule({
-	description: `Parenthesis`,
+	description: `Brackets`,
 	manipulators: [
 		// Parenthesis
 		hyper("e", "9", { modifiers: ["left_shift"] }),
@@ -71,6 +74,34 @@ mods.addRule({
 		hyperCmd("o", "close_bracket"),
 	],
 });
+
+mods.addRule({
+	description: `Semicolon / Colon`,
+	manipulators: [
+		// Semicolon
+		hyper("q", "semicolon", { modifiers: ["left_shift"] }),
+		hyper("w", "semicolon"),
+	]
+});
+
+mods.addRule({
+	description: `Quote / Double Quote`,
+	manipulators: [
+		// Quote / Double Quote
+		hyper("t", "quote"),
+		hyper("y", "quote", { modifiers: ["left_shift"] }),
+	]
+});
+
+mods.addRule({
+	description: `hyphen / Underscore`,
+	manipulators: [
+		// Quote / Double Quote
+		hyper("f", "hyphen"),
+		hyper("g", "hyphen", { modifiers: ["left_shift"] }),
+	]
+});
+
 
 
 // Block left-handed shift + left handed key
@@ -109,100 +140,7 @@ rightHandedKeys.forEach(element => {
 });
 
 
-// mods.addRule({
-// 	description: "Block left-handed shift + left handed key",
-// 	manipulators: [
-// 		{
-// 			from: { key_code: "left_shift", modifiers: { optional: ["any"] } },
 
 
-// VSCODE
-// mods.addRule({
-// 	  description: "VSCode",
-// 	  manipulators: [
-
-// const hyperTab = new HyperKey({
-// 	id: "hyperTab",
-// 	description: "Tab",
-// 	from: {
-// 		key_code: "tab",
-// 		modifiers: {
-// 			optional: ["any"],
-// 	},
-// },
-// 	to_if_alone: [
-// 		{
-// 			// if pressed alone, act as tab
-// 			key_code: "tab",
-// 		},
-// 	],
-// });
-
-// // Hyper Tab
-
-// hyperTab.bindKey({
-// 	description: "SemiColon",
-
-// 	key: "o",
-// 	to: {
-// 		key_code: "semicolon",
-// 	},
-// });
-
-// hyperTab.bindKey({
-// 	description: "Colon",
-
-// 	key: "i",
-// 	to: {
-// 		key_code: "semicolon",
-// 		modifiers: ["right_shifrigrighth
-// 	},
-// });
-
-// hyperCaps.bindKey({
-// 	description: "Open parentheses",
-
-// 	// combine the hyper key with the key 'd'
-// 	key: "u",
-
-// 	to: {
-// 		key_code: "9",
-// 		modifiers: ["right_shiftrigrighth
-// 	},
-// });
-
-// hyperCaps.bindKey({
-// 	description: "Close parentheses",
-
-// 	// combine the hyper key with the key 'd'
-// 	key: "i",
-
-// 	to: {
-// 		key_code: "0",
-// 		modifiers: ["right_shiftrigrighth
-// 	},
-// });
-
-// hyperCaps.bindKey({
-// 	description: "Open curly Brackets",
-
-// 	// combine the hyper key with the key 'd'
-// 	key: "o",
-
-// 	to: {
-// 		key_code: "open_bracket",
-// 	},
-// });
-
-// hyperCaps.bindKey({
-// 	description: "Open curly Brackets",
-
-// 	// combine the hyper key with the key 'd'
-// 	key: "p",
-
-// 	to: {
-// 		key_code: "close_bracket",
-// 	},
-// });
 
 mods.writeToProfile("main");
