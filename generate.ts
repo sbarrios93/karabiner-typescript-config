@@ -6,7 +6,6 @@ import {
 import { hyper, hyperCmd } from "./utils/hyper.ts";
 import { ifApp, notApp } from "./utils/conditions.ts";
 
-console.log(Key)
 
 const mods = new KarabinerComplexModifications();
 
