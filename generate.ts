@@ -12,7 +12,7 @@ mods.addRule({
 	description: "Hyper key",
 	manipulators: [
 		{
-			from: { key_code: "caps_lock", modifiers: { optional: ["any"] } },
+			from: { key_code: "tab", modifiers: { optional: ["any"] } },
 			to: [
 				{
 					key_code: "right_shift",
@@ -22,7 +22,7 @@ mods.addRule({
 			type: "basic",
 			to_if_alone: [
 				{
-					key_code: "escape",
+					key_code: "tab",
 				},
 			],
 		},
