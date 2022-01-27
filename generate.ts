@@ -107,8 +107,14 @@ mods.addRule({
 	],
 });
 
-// Block left-handed shift + left handed key const leftHandedKeys: Key[] = [ "1", "2", "3", "4", "5",
-"q",
+// Block left-handed shift + left handed key
+const leftHandedKeys: Key[] = [
+	"1",
+	"2",
+	"3",
+	"4",
+	"5",
+	"q",
 	"w",
 	"e",
 	"r",
