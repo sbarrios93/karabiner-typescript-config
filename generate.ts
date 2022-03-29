@@ -12,11 +12,11 @@ mods.addRule({
 	description: "Hyper key",
 	manipulators: [
 		{
-			from: { key_code: "tab", modifiers: { optional: ["any"] } },
+			from: { key_code: "tab", modifiers: { optional: [ "any" ] } },
 			to: [
 				{
 					key_code: "right_shift",
-					modifiers: ["right_control", "right_option"],
+					modifiers: [ "right_control", "right_option" ],
 				},
 			],
 			type: "basic",
@@ -41,20 +41,20 @@ mods.addRule({
 	],
 });
 
-const vimTuples: [Key, Key][] = [
-	["k", "up_arrow"],
-	["j", "down_arrow"],
-	["h", "left_arrow"],
-	["l", "right_arrow"],
+const vimTuples: [ Key, Key ][] = [
+	[ "k", "up_arrow" ],
+	[ "j", "down_arrow" ],
+	[ "h", "left_arrow" ],
+	[ "l", "right_arrow" ],
 ];
 
-vimTuples.forEach(([keyFrom, keyTo]) => {
+vimTuples.forEach(([ keyFrom, keyTo ]) => {
 	mods.addRule({
 		description: `Vim Key Bindings ${keyFrom} -> ${keyTo}`,
 		manipulators: [
 			// Arrows
 			hyper(keyFrom, keyTo),
-			hyperCmd(keyFrom, keyTo, { modifiers: ["left_shift"] }),
+			hyperCmd(keyFrom, keyTo, { modifiers: [ "left_shift" ] }),
 		],
 	});
 });
@@ -64,10 +64,10 @@ mods.addRule({
 	description: `Brackets`,
 	manipulators: [
 		// Parenthesis
-		hyper("e", "9", { modifiers: ["left_shift"] }),
-		hyper("r", "0", { modifiers: ["left_shift"] }),
-		hyper("i", "open_bracket", { modifiers: ["left_shift"] }),
-		hyper("o", "close_bracket", { modifiers: ["left_shift"] }),
+		hyper("e", "9", { modifiers: [ "left_shift" ] }),
+		hyper("r", "0", { modifiers: [ "left_shift" ] }),
+		hyper("i", "open_bracket", { modifiers: [ "left_shift" ] }),
+		hyper("o", "close_bracket", { modifiers: [ "left_shift" ] }),
 		hyperCmd("i", "open_bracket"),
 		hyperCmd("o", "close_bracket"),
 	],
@@ -77,8 +77,8 @@ mods.addRule({
 	description: `Semicolon / Colon`,
 	manipulators: [
 		// Semicolon
-		hyper("q", "semicolon", { modifiers: ["left_shift"] }),
-		hyper("w", "semicolon"),
+		hyper("w", "semicolon", { modifiers: [ "left_shift" ] }),
+		hyper("q", "semicolon"),
 	],
 });
 
@@ -87,7 +87,7 @@ mods.addRule({
 	manipulators: [
 		// Quote / Double Quote
 		hyper("t", "quote"),
-		hyper("y", "quote", { modifiers: ["left_shift"] }),
+		hyper("y", "quote", { modifiers: [ "left_shift" ] }),
 	],
 });
 
@@ -101,11 +101,25 @@ mods.addRule({
 mods.addRule({
 	description: `hyphen / Underscore`,
 	manipulators: [
-		// Quote / Double Quote
+		// hyphen / Underscore
 		hyper("f", "hyphen"),
-		hyper("g", "hyphen", { modifiers: ["left_shift"] }),
+		hyper("g", "hyphen", { modifiers: [ "left_shift" ] }),
 	],
 });
+
+// Excel f2, f4 and f5
+mods.addRule({
+	description: `Excel`,
+	manipulators: [
+		// Excel f2
+		hyper("2", "f2"),
+		// Excel f4
+		hyper("4", "f4"),
+		// Excel f5
+		hyper("5", "f5")
+	],
+});
+
 
 // Block left-handed shift + left handed key
 const leftHandedKeys: Key[] = [
@@ -137,9 +151,9 @@ leftHandedKeys.forEach((element) => {
 			{
 				from: {
 					key_code: element,
-					modifiers: { mandatory: ["left_shift"] },
+					modifiers: { mandatory: [ "left_shift" ] },
 				},
-				to: [{ key_code: "vk_none" }],
+				to: [ { key_code: "vk_none" } ],
 				type: "basic",
 			},
 		],
@@ -182,9 +196,9 @@ rightHandedKeys.forEach((element) => {
 			{
 				from: {
 					key_code: element,
-					modifiers: { mandatory: ["right_shift"] },
+					modifiers: { mandatory: [ "right_shift" ] },
 				},
-				to: [{ key_code: "vk_none" }],
+				to: [ { key_code: "vk_none" } ],
 				type: "basic",
 			},
 		],
